@@ -26,24 +26,24 @@ public class GripManager : MonoBehaviour {
 
 		if (isGripped) 
 		{
-			if (left.canGrip && lDevice.GetTouch (SteamVR_Controller.ButtonMask.Grip)) {
+			if (left.canGrip && lDevice.GetPress (SteamVR_Controller.ButtonMask.Trigger)) {
 				Body.useGravity = false;
 				Body.isKinematic = true;
 				Body.transform.position += (left.prevPos - left.transform.localPosition);
 			} 
-			else if (left.canGrip && lDevice.GetTouchUp (SteamVR_Controller.ButtonMask.Grip))
+			else if (left.canGrip && lDevice.GetPressUp (SteamVR_Controller.ButtonMask.Trigger))
 			{
 				Body.useGravity = true;
 				Body.isKinematic = false;
 				Body.velocity = ((left.prevPos - left.transform.localPosition) * velocityMultiplier) / Time.deltaTime;
 			}
 
-			if (right.canGrip && rDevice.GetTouch (SteamVR_Controller.ButtonMask.Grip)) {
+			if (right.canGrip && rDevice.GetPress (SteamVR_Controller.ButtonMask.Trigger)) {
 				Body.useGravity = false;
 				Body.isKinematic = true;
 				Body.transform.position += (right.prevPos - right.transform.localPosition);
 			} 
-			else if (right.canGrip && rDevice.GetTouchUp (SteamVR_Controller.ButtonMask.Grip))
+			else if (right.canGrip && rDevice.GetPressUp (SteamVR_Controller.ButtonMask.Trigger))
 			{
 				Body.useGravity = true;
 				Body.isKinematic = false;

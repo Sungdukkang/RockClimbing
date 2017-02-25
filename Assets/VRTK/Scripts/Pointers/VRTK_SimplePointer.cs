@@ -238,7 +238,7 @@ namespace VRTK
             }
 
             //check if beam has hit a new target
-            if (hasRayHit)
+            if (hasRayHit && collidedWith.transform.gameObject.layer != LayerMask.NameToLayer("Grip"))
             {
                 pointerContactDistance = collidedWith.distance;
                 pointerContactTarget = collidedWith.transform;
