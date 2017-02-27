@@ -81,6 +81,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\HitGround.cs" />
+    <Compile Include="Assets\Scripts\Falling.cs" />
     <Compile Include="Assets\Scripts\GridSpawner.cs" />
     <Compile Include="Assets\Scripts\GripManager.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
