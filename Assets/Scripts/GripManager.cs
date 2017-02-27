@@ -15,10 +15,12 @@ public class GripManager : MonoBehaviour {
     public bool canFall;
     public float fallThreshold = 0f;
 
+
 	// Use this for initialization
 	void Start () {
         isGripped = false;
         canFall = false;
+		fallThreshold = fallThreshold + Body.transform.position.y;
 	}
 	
 	// Update is called once per frame
