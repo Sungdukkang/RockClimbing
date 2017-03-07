@@ -18,9 +18,11 @@ public class Pull : MonoBehaviour {
 		prevPos = controller.transform.localPosition;
 	}
 
-	void OnTriggerEnter() 
+	void OnTriggerEnter(Collider other) 
 	{
-		canGrip = true;	
+        if (other.gameObject.layer == LayerMask.NameToLayer("Grip")) {
+            canGrip = true;
+        }	
 	}
 
 	void OnTriggerExit()
