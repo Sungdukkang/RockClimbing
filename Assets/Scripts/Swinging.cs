@@ -42,7 +42,10 @@ public class Swinging : MonoBehaviour {
 		}
         */
 
-        if (Physics.Raycast(pointer.position, pointer.forward, out hit, distance, layerMask))
+        float radius = .7f;
+
+            //if (Physics.Raycast(pointer.position, pointer.forward, out hit, distance, layerMask))
+            if (Physics.SphereCast(pointer.position, radius, pointer.forward, out hit, distance, layerMask))
             {
                 line.enabled = true;
                 line.SetPosition(0, pointer.position); // need to use the gun muzzle position
